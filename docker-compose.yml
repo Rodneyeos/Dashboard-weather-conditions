@@ -1,0 +1,11 @@
+services:
+  dashboard:
+    build: .
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - weather_data:/data
+    ports:
+      - "127.0.0.1:8000:8000"
+volumes:
+  weather_data:
